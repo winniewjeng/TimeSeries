@@ -4,7 +4,9 @@ library(ggplot2)
 food <- JensenFoodsSales
 
 ### Simple Time Series Plot
-ggplot(food,aes(Time, Sales)) + geom_line() + geom_point()
+ggplot(food, aes(Time, Sales)) + 
+  geom_line(aes(y = Sales), colour="red", size=2) +
+  geom_point()
 
 ### Regression Analysis
 # syntax: fit = lm (dependent.y ~ independent.x, data)
@@ -21,3 +23,4 @@ sales = coeffs[1] + coeffs[2] * future.year; sales
 ### Sales Projection Practice:
 # Some researchers suggest not to project sales, production, and other economic series more than n/2 times
 # Others suggest the forecast to be no longer than 2 years in repidly changing economic times
+
